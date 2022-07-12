@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useEntry from "../hooks/useEntry";
 import { ErrorMessage } from "../components/ErrorMesage";
-import { EntryForm } from "../components/EntryForm";
+import { EntryForm } from "../components/EntryForm/EntryForm";
 
 export const EditEntryPage = () => {
   const { id } = useParams();

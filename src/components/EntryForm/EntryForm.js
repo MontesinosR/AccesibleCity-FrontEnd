@@ -1,6 +1,7 @@
+import "./style.css";
 import { useContext, useState, useRef } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { sendEntryService, editEntryService } from "../services";
+import { AuthContext } from "../../context/AuthContext";
+import { sendEntryService, editEntryService } from "../../services";
 import { useNavigate } from "react-router-dom";
 
 export const EntryForm = ({ addEntry, entry }) => {
@@ -94,7 +95,9 @@ export const EntryForm = ({ addEntry, entry }) => {
     <form onSubmit={entry ? editEntry : createEntry}>
       <h1>Add new Entry</h1>
       <fieldset>
-        <label htmlFor="title">Title: </label>
+        <label className="label" htmlFor="title">
+          Title:{" "}
+        </label>
         <input
           type="text"
           id="title"
@@ -105,7 +108,9 @@ export const EntryForm = ({ addEntry, entry }) => {
         />
       </fieldset>
       <fieldset>
-        <label htmlFor="description">Description: </label>
+        <label className="label" htmlFor="description">
+          Description:{" "}
+        </label>
         <input
           type="text"
           id="description"
@@ -116,7 +121,9 @@ export const EntryForm = ({ addEntry, entry }) => {
         />
       </fieldset>
       <fieldset>
-        <label htmlFor="image">Image (optional): </label>
+        <label className="label" htmlFor="image">
+          Image (optional):{" "}
+        </label>
         <input type="file" id="image" name="image" ref={imageInputRef} />
       </fieldset>
       <fieldset>
@@ -131,7 +138,9 @@ export const EntryForm = ({ addEntry, entry }) => {
         />
       </fieldset>
       <fieldset>
-        <label htmlFor="neighborhood">Neighborhood: </label>
+        <label className="label" htmlFor="neighborhood">
+          Neighborhood:{" "}
+        </label>
         <input
           type="text"
           id="neighborhood"
@@ -142,7 +151,9 @@ export const EntryForm = ({ addEntry, entry }) => {
         />
       </fieldset>
       <fieldset>
-        <label htmlFor="status">Status: </label>
+        <label className="label" htmlFor="status">
+          Status:{" "}
+        </label>
         <select
           id="status"
           name="status"

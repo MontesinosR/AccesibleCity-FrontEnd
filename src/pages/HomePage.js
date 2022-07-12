@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { EntryForm } from "../components/EntryForm";
+import { EntryForm } from "../components/EntryForm/EntryForm";
 import useEntries from "../hooks/useEntries";
 import { EntriesList } from "../components/EntriesList";
 import { ErrorMessage } from "../components/ErrorMesage";

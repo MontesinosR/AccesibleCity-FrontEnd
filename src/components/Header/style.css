@@ -2,11 +2,10 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  min-width: 80%;
-  padding: 1rem;
-
+  width: 80%;
+  margin-top: 1em;
   background-color: var(--gunmetal);
   color: var(--ivory);
 }

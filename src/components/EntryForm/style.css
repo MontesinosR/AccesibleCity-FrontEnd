@@ -1,0 +1,14 @@
+* {
+  border: none;
+}
+
+.label {
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px;
+  border-color: var(--cerulean-crayola);
+}
