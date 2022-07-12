@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 80%;
+  padding: 1rem;
+  background-color: white;
+}
+
+.header h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  margin-left: 1em;
+}

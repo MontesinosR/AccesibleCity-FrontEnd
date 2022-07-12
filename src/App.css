@@ -1,0 +1,60 @@
+/* Global Colors */
+
+:root {
+  --gunmetal: #2c363fff;
+  --cerulean-crayola: #00a7e1ff;
+  --blush: #e75a7cff;
+  --ivory: #f2f5eaff;
+}
+
+/* Override antd global styles */
+
+ul {
+  margin-bottom: 0px;
+}
+
+input[type="password"] {
+  -webkit-appearance: auto;
+}
+
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0 10%;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+
+main {
+  flex-grow: 1;
+  min-width: 80%;
+  margin: 2rem auto;
+}
+
+main > section > h2 {
+  margin-bottom: 2rem;
+}
+
+main h1 {
+  padding: 2rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--cerulean-crayola);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
