@@ -29,12 +29,14 @@ input[type="password"] {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: whitesmoke;
+
+  background-color: var(--gunmetal);
+  color: var(--ivory);
 }
 
 main {
   flex-grow: 1;
-  min-width: 80%;
+  width: 80%;
   margin: 2rem auto;
 }
 

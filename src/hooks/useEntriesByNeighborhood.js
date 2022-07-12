@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getEntriesByNeighborhood } from "../services";
 
 const useEntriesByNeighborhood = (neighborhood) => {
-  //estado
   const [entries, setEntries] = useState([]);
   const [loading, setLoding] = useState(true);
   const [error, setError] = useState("");

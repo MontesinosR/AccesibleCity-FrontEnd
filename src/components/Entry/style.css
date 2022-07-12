@@ -11,7 +11,9 @@
   overflow: hidden;
   height: 200px;
   max-width: 100vw; /* No consigo ajustarlo al ancho de la ventana. Idealmente cada card ocuparía el mismo ancho que el header */
-  background: white;
+
+  background-color: var(--gunmetal);
+  color: var(--ivory);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
