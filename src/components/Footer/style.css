@@ -1,9 +1,13 @@
 * {
   align-items: center;
-  padding: 4px 0;
+  color: var(--ivory);
+}
+
+footer {
+  margin: 1em 0;
 }
 
 a {
   text-decoration: none;
-  color: #00a7e1;
+  color: var(--cerulean-crayola);
 }
