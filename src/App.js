@@ -4,7 +4,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { EntryPage } from "./pages/EntryPage";
-import { LoginPage } from "./pages/LoginPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { EditEntryPage } from "./pages/EditEntryPage";

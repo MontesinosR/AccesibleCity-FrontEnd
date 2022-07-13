@@ -1,8 +1,8 @@
-
+import "./style.css";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import { loginUserService } from "../services";
+import { AuthContext } from "../../context/AuthContext";
+import { loginUserService } from "../../services";
 
 export const LoginPage = () => {
   //Controlamos los estados de los input
@@ -58,10 +58,9 @@ export const LoginPage = () => {
           />
         </fieldset>
 
-        <button>Login</button>
+        <button className="login-button">Login</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>
   );
 };
-
