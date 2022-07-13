@@ -8,13 +8,12 @@
 
 .card {
   overflow: hidden;
-  /*   height: 200px;
- */
   max-width: 100vw;
   margin-bottom: 1em;
   background-color: var(--gunmetal);
   color: var(--ivory);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +23,7 @@
 img {
   width: 25%;
   padding: 12px;
-  object-fit: cover; /* Conseguir que la imagen se ajuste al height de .card (su container) en pantalla laptop */
+  object-fit: cover;
 }
 
 .card a {
@@ -53,7 +52,7 @@ button,
 section > button {
   background-color: #e75a7c;
   color: #f2f5ea;
-  width: 80%; /* También se está aplicando al botón del EntryForm */
+  width: 80%;
   align-items: center;
   margin: 1em 2em 0 1em;
   padding: 6px 18px;

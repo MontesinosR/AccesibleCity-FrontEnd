@@ -161,11 +161,11 @@ export const EntryForm = ({ addEntry, entry }) => {
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         >
-          <option>open</option>
-          <option>close</option>
+          <option className="status-option">open</option>
+          <option className="status-option">close</option>
         </select>
       </fieldset>
-      <button>Send Entry</button>
+      <button className="form-button">Send Entry</button>
       {sending ? <p>Sending Entry</p> : null}
       {error ? <p>{error} </p> : null}
     </form>
