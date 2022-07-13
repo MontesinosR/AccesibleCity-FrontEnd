@@ -76,7 +76,7 @@ export const getMyUserDataService = async (token) => {
     throw new Error(json.message);
     //Si hay error muestra el error
   } else {
-    ("else");
+    /* ("else"); */
     return json.data;
     //Sino hay error devuelve el json.data
   }

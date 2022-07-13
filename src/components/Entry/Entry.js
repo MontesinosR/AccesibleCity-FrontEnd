@@ -107,7 +107,6 @@ export const Entry = ({ entry, removeEntry }) => {
         draggable
         pauseOnHover
       />
-      ;
     </article>
   );
 };
