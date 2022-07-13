@@ -2,17 +2,31 @@ import "./style.css";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { deleteEntryService } from "../../services";
+import { deleteEntryService, voteEntryService } from "../../services";
 
 export const Entry = ({ entry, removeEntry }) => {
-  //importamos el contexto del usuario
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
-  //const [edit, setEdit] = useState(false);
-  const [votes, setVotes] = useState(entry.votes); // Continuar con función addVotes para añadir a onClick.
+  const [votes, setVotes] = useState(entry.votes || 0);
   const navigate = useNavigate();
+  //console.log(user);
 
-  //creamos funcion deleteEntry
+  const addVote = async () => {
+    let userId = user?.id;
+    console.log(userId);
+    let entryId = entry.id;
+    console.log(entryId);
+
+    console.log(token);
+    try {
+      await voteEntryService({ userId, entryId, token });
+      setVotes(votes + 1);
+    } catch (error) {
+      alert(`${error.message}`);
+      setError("");
+    }
+  };
+
   const deleteEntry = async (id) => {
     try {
       //primero lo borra usando el service
@@ -30,7 +44,7 @@ export const Entry = ({ entry, removeEntry }) => {
       setError(error.message);
     }
   };
-  console.log(entry);
+
   return (
     <article className="card">
       {entry.photo ? (
@@ -54,9 +68,18 @@ export const Entry = ({ entry, removeEntry }) => {
       </div>
 
       <div className="buttons">
-        <button onClick={() => (entry.votes = +1)}>
+        {/*       Votes Button               */}
+        <button
+          onClick={() => {
+            if (user) {
+              addVote();
+            } else {
+              navigate("/login");
+            }
+          }}
+        >
           {" "}
-          Votes: {entry.votes || 0}
+          Votes: {votes}
         </button>
 
         {/*       Delete Entry Button        */}
@@ -67,7 +90,7 @@ export const Entry = ({ entry, removeEntry }) => {
           </section>
         ) : null}
 
-        {/*       Edit Entry Button         */}
+        {/*        Edit Entry Button         */}
         {user && user.role === "admin" ? (
           <section>
             <Link to={`/entry/${entry.id}/edit`}>

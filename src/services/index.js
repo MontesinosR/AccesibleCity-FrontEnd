@@ -1,6 +1,3 @@
-//poner aquí servicio getAllEntrysService
-//WITHVOTES
-
 export const getAllEntriesWithVotesService = async () => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/votes`);
 
@@ -12,8 +9,6 @@ export const getAllEntriesWithVotesService = async () => {
 
   return json.data;
 };
-
-//poner aquí servicio getSingleEntryService
 
 export const getSingleEntryService = async (id) => {
   const response = await fetch(
@@ -28,8 +23,6 @@ export const getSingleEntryService = async (id) => {
 
   return json.data;
 };
-
-//--------------------register service-------------------------------------
 
 export const registerUserService = async ({ name, email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/users`, {
@@ -49,8 +42,6 @@ export const registerUserService = async ({ name, email, password }) => {
   }
 };
 
-//------------------- LOGIN SERVICE -----------------
-
 export const loginUserService = async ({ email, password }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/login`, {
     method: "POST",
@@ -69,15 +60,12 @@ export const loginUserService = async ({ email, password }) => {
   return json.data;
 };
 
-//-------------------- GET USER DATA -------------------------
-
 export const getMyUserDataService = async (token) => {
   // Pasamos token como parámetro.
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/users/profile`, // Hacemos el fetch al nuevo endpoint getUserProfile.
     { headers: { Authorization: `Bearer ${token}` } } // Enviamos el token en los headers.
   );
-  //Le paso el email por procs en la ruta. Lleva método GET por defecto.
 
   const json = await response.json();
 
@@ -94,8 +82,6 @@ export const getMyUserDataService = async (token) => {
     //Sino hay error devuelve el json.data
   }
 };
-
-//--------------------------- CREATE ENTRY ----------------------
 
 export const sendEntryService = async ({ data, token }) => {
   console.log("token");
@@ -120,8 +106,6 @@ export const sendEntryService = async ({ data, token }) => {
   return json.data;
 };
 
-//------------------ DELETE ENTRY SERVICE --------------
-
 export const deleteEntryService = async ({ id, token }) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/entries/${id}`,
@@ -140,8 +124,6 @@ export const deleteEntryService = async ({ id, token }) => {
     throw new Error(json.message);
   }
 };
-
-//--------------------EDIT ENTRY SERVICE--------------------
 
 export const editEntryService = async ({ id, token, entry }) => {
   const response = await fetch(
@@ -163,8 +145,6 @@ export const editEntryService = async ({ id, token, entry }) => {
   }
 };
 
-//---------------GET ENTRIES BY NEIGHBORHOOD--------------
-
 export const getEntriesByNeighborhood = async (neighborhood) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/entries/${neighborhood}`
@@ -178,4 +158,26 @@ export const getEntriesByNeighborhood = async (neighborhood) => {
   }
 
   return json.data;
+};
+
+export const voteEntryService = async ({ userId, entryId, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/votes/${entryId}`, // Probando diferentes cosas.
+    {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userId, entryId }),
+    }
+  );
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  } else {
+    console.log("Vote added successfully");
+  }
 };
