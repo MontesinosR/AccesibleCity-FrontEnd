@@ -58,7 +58,7 @@ export const LoginPage = () => {
         </fieldset>
 
         <button className="login-button">Login</button>
-        {error ? <p>{error}</p> : null}
+        {error ? <p className="register-error">{error}</p> : null}
       </form>
     </section>
   );
