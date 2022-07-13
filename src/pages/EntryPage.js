@@ -5,7 +5,6 @@ import { Entry } from "../components/Entry/Entry";
 
 export const EntryPage = () => {
   const { id } = useParams();
-  //  console.log(params)
 
   const { entry, loading, error } = useEntry(id);
 

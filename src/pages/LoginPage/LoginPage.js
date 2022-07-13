@@ -22,7 +22,6 @@ export const LoginPage = () => {
     try {
       const data = await loginUserService({ email, password });
 
-      //console.log(data);
       login(data.token);
       //Le pasa el token al context
 

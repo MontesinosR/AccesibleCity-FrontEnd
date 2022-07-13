@@ -76,21 +76,13 @@ export const getMyUserDataService = async (token) => {
     throw new Error(json.message);
     //Si hay error muestra el error
   } else {
-    console.log("else");
-    console.log(json);
-    console.log(json.data);
-    console.log("response");
-    console.log(response);
+    ("else");
     return json.data;
     //Sino hay error devuelve el json.data
   }
 };
 
 export const sendEntryService = async ({ data, token }) => {
-  console.log("token");
-  console.log(token);
-  console.log("body.data");
-  console.log(data);
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/entries`, {
     method: "POST",
     body: data,
@@ -102,7 +94,6 @@ export const sendEntryService = async ({ data, token }) => {
   const json = await response.json();
 
   if (!response.ok) {
-    console.log(json);
     throw new Error(json.message);
   }
 
@@ -122,8 +113,6 @@ export const deleteEntryService = async ({ id, token }) => {
   const json = await response.json();
 
   if (!response.ok) {
-    console.log("error al borrar");
-    console.log(json);
     throw new Error(json.message);
   }
 };
@@ -142,8 +131,6 @@ export const editEntryService = async ({ id, token, entry }) => {
   const json = await response.json();
 
   if (!response.ok) {
-    console.log("error al editar");
-    console.log(json);
     throw new Error(json.message);
   }
 };
@@ -155,8 +142,6 @@ export const getEntriesByNeighborhood = async (neighborhood) => {
   const json = await response.json();
 
   if (!response.ok) {
-    console.log("error al cargar entriesByNeighborhood");
-    console.log(json);
     throw new Error(json.message);
   }
 

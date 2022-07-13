@@ -20,7 +20,6 @@ export const AuthProviderComponent = ({ children }) => {
         //conseguir acceso a email
         setUser(data);
       } catch (error) {
-        console.log("logout por error");
         logout();
       }
     };

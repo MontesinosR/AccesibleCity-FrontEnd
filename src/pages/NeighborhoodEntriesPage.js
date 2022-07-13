@@ -6,7 +6,6 @@ export const NeighborhoodEntriesPage = () => {
   const { neighborhood } = useParams();
   const { entries, removeEntry, error } =
     useEntriesByNeighborhood(neighborhood);
-  console.log(entries);
   return (
     <section>
       <h2>{neighborhood}</h2>
