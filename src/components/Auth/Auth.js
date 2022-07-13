@@ -8,9 +8,11 @@ export const Auth = () => {
   const { user, logout } = useContext(AuthContext);
 
   return user ? (
-    <p>
+    <p className="user-welcome">
       Welcome, {user.name}
-      <button onClick={() => logout()}>Logout</button>
+      <button className="logout-button" onClick={() => logout()}>
+        Logout
+      </button>
     </p>
   ) : (
     <ul className="nav-ul">
