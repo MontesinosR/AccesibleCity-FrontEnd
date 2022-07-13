@@ -9,15 +9,11 @@ export const Entry = ({ entry, removeEntry }) => {
   const [error, setError] = useState("");
   const [votes, setVotes] = useState(entry.votes || 0);
   const navigate = useNavigate();
-  //console.log(user);
 
   const addVote = async () => {
     let userId = user?.id;
-    console.log(userId);
     let entryId = entry.id;
-    console.log(entryId);
 
-    console.log(token);
     try {
       await voteEntryService({ userId, entryId, token });
       setVotes(votes + 1);

@@ -1,0 +1,13 @@
+.nav-buttons {
+  align-items: center;
+  background-color: #e75a7c;
+  color: #f2f5ea;
+  padding: 6px 18px;
+  margin-right: 1em;
+  border-radius: 8px;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: row;
+}

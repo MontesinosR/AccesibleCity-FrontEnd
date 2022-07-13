@@ -1,6 +1,7 @@
+import "./style.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 
 export const Auth = () => {
   //recibimos el token del usuario con el context
@@ -12,14 +13,18 @@ export const Auth = () => {
       <button onClick={() => logout()}>Logout</button>
     </p>
   ) : (
-    <ul>
+    <ul className="nav-ul">
       <li>
         {" "}
-        <Link to="/register">Register</Link>{" "}
+        <Link className="nav-buttons" to="/register">
+          Register
+        </Link>{" "}
       </li>
       <li>
         {" "}
-        <Link to="/login">Login</Link>{" "}
+        <Link className="nav-buttons" to="/login">
+          Login
+        </Link>{" "}
       </li>
     </ul>
   );
