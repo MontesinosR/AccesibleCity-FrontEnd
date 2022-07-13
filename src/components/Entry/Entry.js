@@ -48,7 +48,7 @@ export const Entry = ({ entry, removeEntry }) => {
         <p>Description: {entry.description}</p>
         <p>City: {entry.city}</p>
         <Link to={`/entries/${entry.neighborhood}`}>
-          <p>Neighborhood: {entry.neighborhood}</p>
+          <p className="neighborhood">Neighborhood: {entry.neighborhood}</p>
         </Link>
         <p>Status: {entry.status}</p>
       </div>
@@ -56,10 +56,9 @@ export const Entry = ({ entry, removeEntry }) => {
       <div className="buttons">
         <button onClick={() => (entry.votes = +1)}>
           {" "}
-          {/* Habrá que crearle una función addVotes, tomando como ejemplo la de deleteEntry. ¿Dónde se guarda el número de votos? ¿Cómo prevenir que un mismo usuario pueda dar más de un voto a cada Entry? */}
           Votes: {entry.votes || 0}
         </button>
-        {/* Crearle una funcionalidad con onClick, parecido delete pero para los votes. */}
+
         {/*       Delete Entry Button        */}
         {user && user.role === "admin" ? (
           <section>
@@ -67,6 +66,7 @@ export const Entry = ({ entry, removeEntry }) => {
             {error ? <p>{error} </p> : null}
           </section>
         ) : null}
+
         {/*       Edit Entry Button         */}
         {user && user.role === "admin" ? (
           <section>
