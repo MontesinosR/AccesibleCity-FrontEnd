@@ -29,8 +29,7 @@ input[type="password"] {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  background-color: var(--gunmetal);
+  background-color: #293438; /* #3B414A */
   color: var(--ivory);
 }
 
@@ -46,6 +45,11 @@ main > section > h2 {
 
 main h1 {
   padding: 2rem 0;
+}
+
+header {
+  height: 80px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 a {

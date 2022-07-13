@@ -7,13 +7,14 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header className="header">
+      {" "}
       <h1>
         {" "}
         <Link to="/">Accessible City App</Link>{" "}
       </h1>
       <nav>
         <Auth />
-      </nav>
+      </nav>{" "}
     </header>
   );
 };

@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin-top: 1em;
+  padding: 0 10%;
+  width: 100%;
   background-color: var(--gunmetal);
   color: var(--ivory);
 }
