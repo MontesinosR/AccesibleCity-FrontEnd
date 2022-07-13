@@ -5,6 +5,9 @@
   --cerulean-crayola: #00a7e1ff;
   --blush: #e75a7cff;
   --ivory: #f2f5eaff;
+  --toastify-color-dark: #2c363fff;
+  --toastify-toast-background: #2c363fff;
+  --toastify-color-progress-dark: #e75a7cff;
 }
 
 /* Override antd global styles */
@@ -63,4 +66,9 @@ ul {
 
 img {
   max-width: 100%;
+}
+
+.register-error {
+  margin-top: 1em;
+  color: var(--ivory);
 }

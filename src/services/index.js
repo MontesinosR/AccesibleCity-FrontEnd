@@ -1,3 +1,6 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export const getAllEntriesWithVotesService = async () => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/votes`);
 
@@ -38,7 +41,7 @@ export const registerUserService = async ({ name, email, password }) => {
   if (!response.ok) {
     throw new Error(json.message);
   } else {
-    alert("Usuario registrado, comprueba tu correo para activar tu cuenta");
+    toast("Usuario registrado, comprueba tu correo para activar tu cuenta");
   }
 };
 

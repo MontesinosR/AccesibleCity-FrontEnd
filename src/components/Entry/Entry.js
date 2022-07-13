@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { deleteEntryService, voteEntryService } from "../../services";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Entry = ({ entry, removeEntry }) => {
   const { user, token } = useContext(AuthContext);
@@ -18,7 +20,7 @@ export const Entry = ({ entry, removeEntry }) => {
       await voteEntryService({ userId, entryId, token });
       setVotes(votes + 1);
     } catch (error) {
-      alert(`${error.message}`);
+      toast(error.message);
       setError("");
     }
   };
@@ -50,7 +52,6 @@ export const Entry = ({ entry, removeEntry }) => {
           alt={entry.title}
         />
       ) : null}
-
       <div className="info">
         <h2>
           <Link to={`/entry/${entry.id}`}> {entry.title} </Link>
@@ -62,7 +63,6 @@ export const Entry = ({ entry, removeEntry }) => {
         </Link>
         <p>Status: {entry.status}</p>
       </div>
-
       <div className="buttons">
         {/*       Votes Button               */}
         <button
@@ -95,6 +95,19 @@ export const Entry = ({ entry, removeEntry }) => {
           </section>
         ) : null}
       </div>
+      <ToastContainer
+        theme="dark"
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      ;
     </article>
   );
 };

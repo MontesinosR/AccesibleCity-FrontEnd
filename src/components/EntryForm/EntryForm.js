@@ -26,7 +26,6 @@ export const EntryForm = ({ addEntry, entry }) => {
   const [status, setStatus] = useState(oldStatus || "open");
   const imageInputRef = useRef();
   const navigate = useNavigate();
-  console.log("status:", status);
 
   const createEntry = async (e) => {
     e.preventDefault();
@@ -45,7 +44,6 @@ export const EntryForm = ({ addEntry, entry }) => {
       data.append("status", status);
       const entry = await sendEntryService({ data, token });
 
-      console.log(entry);
       addEntry(entry);
       // Tras crear una Entry los inputs vuelven a estar vacíos.
       setTitle("");
@@ -54,8 +52,6 @@ export const EntryForm = ({ addEntry, entry }) => {
       setDescr("");
       setStatus("");
     } catch (error) {
-      console.log(error);
-      console.log(error.message);
       setError(error.message);
     } finally {
       setSending(false);
@@ -78,13 +74,11 @@ export const EntryForm = ({ addEntry, entry }) => {
 
       await editEntryService({
         id,
-        entry: data, //¿Debería enviar photo al SERVICE?
+        entry: data,
         token,
       });
       navigate(`/entry/${id}`);
     } catch (error) {
-      console.log(error);
-      console.log(error.message);
       setError(error.message);
     } finally {
       setSending(false);

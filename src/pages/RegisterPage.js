@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUserService } from "../services";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
@@ -81,8 +83,20 @@ export const RegisterPage = () => {
 
         <button className="login-button">Register</button>
 
-        {error ? <p>{error}</p> : null}
+        {error ? <p className="register-error">{error}</p> : null}
       </form>
+      <ToastContainer
+        theme="dark"
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };
