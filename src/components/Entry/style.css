@@ -8,7 +8,8 @@
 
 .card {
   overflow: hidden;
-  height: 200px;
+  /*   height: 200px;
+ */
   max-width: 100vw;
   margin-bottom: 1em;
   background-color: var(--gunmetal);
