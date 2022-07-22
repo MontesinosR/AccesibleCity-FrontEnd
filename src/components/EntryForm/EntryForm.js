@@ -156,7 +156,7 @@ export const EntryForm = ({ addEntry, entry }) => {
           onChange={(e) => setStatus(e.target.value)}
         >
           <option className="status-option">open</option>
-          <option className="status-option">close</option>
+          <option className="status-option">closed</option>
         </select>
       </fieldset>
       <button className="form-button">Send Entry</button>
