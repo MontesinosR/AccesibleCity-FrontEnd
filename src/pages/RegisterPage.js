@@ -63,7 +63,7 @@ export const RegisterPage = () => {
         <fieldset>
           <label htmlFor="pass1">Password: </label>
           <input
-            type="pass1"
+            type="password"
             id="pass1"
             name="pass1"
             required
@@ -73,7 +73,7 @@ export const RegisterPage = () => {
         <fieldset>
           <label htmlFor="pass2">Repeat Password: </label>
           <input
-            type="pass2"
+            type="password"
             id="pass2"
             name="pass2"
             required
@@ -83,8 +83,11 @@ export const RegisterPage = () => {
 
         <button className="login-button">Register</button>
 
-        {error ? <p className="register-error">{error}</p> : null}
+        {/*         Cambio el <p> de error por un ToastContainer        */}
+
+        {error ? toast(error) : null}
       </form>
+
       <ToastContainer
         theme="dark"
         position="bottom-left"

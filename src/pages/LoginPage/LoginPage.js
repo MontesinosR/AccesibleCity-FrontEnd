@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { loginUserService } from "../../services";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const LoginPage = () => {
   //Controlamos los estados de los input
@@ -13,8 +15,8 @@ export const LoginPage = () => {
   const { login } = useContext(AuthContext);
   //cargamos navigate
   const navigate = useNavigate();
-  //Cargamos el setemailauth para poder usarlo aquí y tener email en el contexto
-  //para poder pasarlo a la funcion del contexto: getmyUserDataService
+
+  console.log(error);
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -28,7 +30,9 @@ export const LoginPage = () => {
       navigate("/");
       //redigirimos al home
     } catch (error) {
+      console.log(error);
       setError(error.message);
+      toast(setError);
     }
   };
 
@@ -60,6 +64,19 @@ export const LoginPage = () => {
         <button className="login-button">Login</button>
         {error ? <p className="register-error">{error}</p> : null}
       </form>
+
+      <ToastContainer
+        theme="dark"
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };

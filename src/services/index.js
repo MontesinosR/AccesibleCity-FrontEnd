@@ -56,8 +56,14 @@ export const loginUserService = async ({ email, password }) => {
 
   const json = await response.json();
 
+  // Prueba para redirigir usuarios al Register en caso de que no existan.
+
   if (!response.ok) {
-    throw new Error(json.message);
+    // Este cambio ha funcionado, aunque sigue apareciendo el Error 500 (Internal Server Error).
+    // Tras probar un poco más veo que ahora incluso cuando la contraseña es incorrecta sale el toast de usuario no registrado.
+    throw /* new Error(json.message) */ toast(
+      "This user is not registered, please proceed with your registration." // ¿Posibilidad de añadir un Link aquí?
+    );
   }
 
   return json.data;
